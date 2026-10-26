@@ -4,19 +4,19 @@
 **Subtitle:** Fast, Correct Concurrent Data Structures in Modern C++
 **Author:** Oussama Seghaier *(confirm)*
 **Edition:** First edition, version 1.0, November 2026 *(confirm month)*
-**Language:** English · **Interior:** 344 pages, black and white · **Trim:** 7.5 × 9.25 in
+**Language:** English · **Interior:** 350 pages, black and white · **Trim:** 7.5 × 9.25 in
 
 ## Files
 
 | File | Use |
 |---|---|
-| `print/interior.pdf` | Paperback interior. 344 pages at 7.5 × 9.25 in, no bleed, all fonts embedded (TrueType, no Type 3), grayscale. 15 figures and a 202-entry index. Upload to KDP Print or IngramSpark. |
-| `print/cover-wrap.pdf` | Paperback cover: back, spine and front with 0.125 in bleed. 16.025 × 9.50 in, spine 0.775 in (344 pages on white paper). A white 2 × 1.2 in box at bottom right of the back is kept free for the barcode. |
+| `print/interior.pdf` | Paperback interior. 350 pages at 7.5 × 9.25 in, no bleed, all fonts embedded (TrueType, no Type 3), grayscale. 27 figures (12 of them charts of the book's measurements) and a 202-entry index. Upload to KDP Print or IngramSpark. |
+| `print/cover-wrap.pdf` | Paperback cover: back, spine and front with 0.125 in bleed. 16.038 × 9.50 in, spine 0.788 in (350 pages on white paper). A white 2 × 1.2 in box at bottom right of the back is kept free for the barcode. |
 | `print/cover-wrap-preview.png` | Preview of the full wrap. |
 | `the-nanosecond-budget.epub` | Ebook for Kindle (KDP accepts EPUB), Apple Books, Kobo and Google Play. EPUB 3, passes EPUBCheck 5.1 with no errors or warnings, and the DAISY Ace accessibility check (EPUB Accessibility 1.1 metadata, alt text on every figure). |
 | `cover.jpg` | Ebook cover, 1600 × 2560 px JPEG (the size KDP recommends). |
-| `the-nanosecond-budget.pdf` | Reading PDF with cover, bookmarks and links, for direct sale (Leanpub, Gumroad, your own site). |
-| `llds-book-code.zip` | Companion code (MIT). Needs a public home: see placeholder 1. |
+| `the-nanosecond-budget.pdf` | Reading PDF in full colour, with cover, bookmarks and links, for direct sale (Leanpub, Gumroad, your own site). |
+| `llds-book-code.zip` | Companion code (MIT), also at https://github.com/OussamaSegh/The-nano-second-budget |
 | `source/` | Manuscript and build scripts. `build-book/edition.yaml` holds every name, ISBN and spec. |
 
 ## Before you upload: placeholders to fill in
@@ -24,13 +24,13 @@
 All of these live in `source/build-book/edition.yaml`. Change them and rebuild with
 `source/build-book/build.sh source/manuscript <out-dir>`:
 
-1. **Code URL (`code_url`). Blocker.** The preface, copyright page and back cover tell readers where to get the code, and currently print "[code URL to be added]". Publish `llds-book-code.zip` as a public repository (for example on GitHub), put its URL here and rebuild.
+1. **Code URL.** Done: https://github.com/OussamaSegh/The-nano-second-budget, printed in the preface, on the copyright page and on the back cover.
 2. **Author name** as it should be printed.
 3. **ISBNs.** Paperback and ebook need different ISBNs. On KDP you can take a free KDP ISBN for the paperback (the imprint then reads "Independently published"), and the Kindle edition needs no ISBN. IngramSpark, or wide distribution under your own imprint, needs ISBNs you buy (in Switzerland from the national agency; in the US from Bowker). Until you fill them in, the copyright page says "to be assigned".
 4. **Publisher or imprint name.**
 5. **Author bio.** If you leave it empty, the book has no About the Author page and the back cover has no bio.
 6. **Website** for errata (optional).
-7. **Paper colour.** On cream paper the spine is wider (0.860 in). Rebuild the cover if you switch.
+7. **Paper colour.** On cream paper the spine is wider (0.875 in). Rebuild the cover if you switch.
 
 8. **Author's voice.** A few passages speak in the first person or as "the author" (the Acknowledgements, and "A result that surprised the author" in Chapter 8). Make them yours or cut them.
 
@@ -79,3 +79,10 @@ If the page count changes, rebuild. The cover script works out the spine width f
 - Book: matching text in Chapter 12 and Appendix D, 15 new figures, a curated index, compiler requirements (GCC 13+, or Clang 17+ with libstdc++), corrected timing figures, full serif font (no fallback glyphs).
 - Not done: the reviewer suggested 20 to 30 figures and a 600+ entry index; the book now has 15 and about 200. Chapters 8 to 22 have not had a line-by-line copy edit.
 - The previous edition is in `v3-pro-before-review/`.
+
+## Colour, charts and the website (2026-10-26)
+
+- The EPUB, the reading PDF and the website use colour figures and colour accents (headings, code, tables). The print interior stays black and white with gray figures, which keeps the cheaper B&W print tier. `book/build-book/build.sh` builds both interiors.
+- 12 new charts plot the measurements printed in the text (memory hierarchy, false sharing, fan-out, coordinated omission, locks, atomics, seqlock, the SPSC steps, MPMC queues, Disruptor, allocators, ordered maps).
+- **Free online:** the GitHub repository is public and the website at https://oussamasegh.github.io/The-nano-second-budget/ offers the full book to read and download. If you later enrol the ebook in KDP Select, Amazon requires the ebook to be exclusive to Kindle, so you would have to take the free PDF, EPUB and online text down first.
+- The previous edition is in `v4-before-color/`.
