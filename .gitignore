@@ -1,0 +1,10 @@
+build*/
+!book/build-book/
+out/
+site/
+book/build-book/figures/
+book/build-book/figures-gray/
+book/build-book/node_modules/
+book/build-book/package*.json
+__pycache__/
+*.pyc

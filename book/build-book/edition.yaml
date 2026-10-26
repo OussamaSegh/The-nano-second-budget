@@ -1,0 +1,36 @@
+# Single source of truth for the edition. Every build (print interior, cover,
+# EPUB, store metadata) reads this file. Values marked PLACEHOLDER need the
+# author's decision before upload.
+title: "The Nanosecond Budget"
+subtitle: "Fast, Correct Concurrent Data Structures in Modern C++"
+tagline: "From cache lines to real-time medical imaging"
+author: "Oussama Seghaier"            # PLACEHOLDER: confirm the name to print
+author_bio: ""                        # PLACEHOLDER: 2-3 sentences; empty = no About page
+publisher: "Independently published"  # PLACEHOLDER: imprint name, if any
+edition: "First edition"
+version: "1.0"
+pub_date: "2026-11"                   # PLACEHOLDER: month of release (YYYY-MM)
+year: "2026"
+isbn_print: ""                        # PLACEHOLDER: 13-digit ISBN; empty prints "to be assigned"
+isbn_ebook: ""                        # PLACEHOLDER
+code_url: "https://github.com/OussamaSegh/The-nano-second-budget"   # printed in the preface, copyright page and back cover
+website: "https://oussamasegh.github.io/The-nano-second-budget/"    # the book site (GitHub Pages)
+code_licence: "MIT License"
+language: "en"
+# Print specification (KDP and IngramSpark both offer this trim).
+trim_w_in: 7.5
+trim_h_in: 9.25
+bleed_in: 0.125
+paper: "white"                        # white | cream (changes spine width)
+bisac:
+  - "COM051310 COMPUTERS / Languages / C++"
+  - "COM051230 COMPUTERS / Software Development & Engineering / General"
+  - "COM051440 COMPUTERS / Software Development & Engineering / Tools"
+keywords:
+  - "C++20 concurrency"
+  - "lock-free data structures"
+  - "low latency programming"
+  - "C++ memory model atomics"
+  - "multithreading performance"
+  - "real-time systems Linux"
+  - "medical imaging software PET"

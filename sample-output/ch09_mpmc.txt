@@ -1,0 +1,28 @@
+mutex+deque  P=1 C=1  flood     1.67 M items/s
+MsQueue      P=1 C=1  flood     2.03 M items/s
+Vyukov       P=1 C=1  flood     6.52 M items/s
+mutex+deque  P=1 C=1  paced  latency p50=  1055 p99= 133119 p99.9= 1671167 ns
+MsQueue      P=1 C=1  paced  latency p50=   427 p99=  15231 p99.9=  192511 ns
+Vyukov       P=1 C=1  paced  latency p50=   207 p99=  19967 p99.9=  802815 ns
+
+mutex+deque  P=2 C=2  flood     2.14 M items/s
+MsQueue      P=2 C=2  flood     2.84 M items/s
+Vyukov       P=2 C=2  flood     5.72 M items/s
+mutex+deque  P=2 C=2  paced  latency p50=  4479 p99= 208895 p99.9= 1261567 ns
+MsQueue      P=2 C=2  paced  latency p50=   647 p99=   9599 p99.9=   52223 ns
+Vyukov       P=2 C=2  paced  latency p50=   487 p99=   3839 p99.9=   29439 ns
+
+mutex+deque  P=3 C=1  flood     0.93 M items/s
+MsQueue      P=3 C=1  flood     3.27 M items/s
+Vyukov       P=3 C=1  flood     6.39 M items/s
+mutex+deque  P=3 C=1  paced  latency p50=4784127 p99=6815743 p99.9= 9961471 ns
+MsQueue      P=3 C=1  paced  latency p50=   791 p99=3801087 p99.9= 7602175 ns
+Vyukov       P=3 C=1  paced  latency p50=   343 p99= 503807 p99.9= 1753087 ns
+
+mutex+deque  P=1 C=3  flood     1.15 M items/s
+MsQueue      P=1 C=3  flood     1.49 M items/s
+Vyukov       P=1 C=3  flood     5.84 M items/s
+mutex+deque  P=1 C=3  paced  latency p50=  1663 p99=  20479 p99.9=  104447 ns
+MsQueue      P=1 C=3  paced  latency p50=   503 p99=   2879 p99.9=   31743 ns
+Vyukov       P=1 C=3  paced  latency p50=   315 p99=   1935 p99.9=   52735 ns
+

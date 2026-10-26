@@ -1,0 +1,3 @@
+# Part IV. Shared State at Scale {.part}
+
+Queues move data between threads. Most systems also need data that many threads *share*: a configuration that every worker reads, a table of instruments or devices, an order book, a session map. This part is about the shared structures and about the problem every one of them runs into first: when a node is removed from a structure that other threads are reading without locks, when is it safe to free it? We answer that question in Chapter 12, then build hash maps (Chapter 13) and ordered structures (Chapter 14) on top of the answer, and finish with the data-layout techniques (Chapter 15) that often matter more than any synchronisation scheme.

@@ -1,0 +1,10 @@
+same-thread alloc+free of 64 B (per-operation latency):
+  new/delete        n=5000000 min=14 p50=25 p90=25 p99=35 p99.9=87 p99.99=3007 max=2339738 mean=29.3 (ns)
+  LockFreePool      n=5000000 min=22 p50=31 p90=32 p99=41 p99.9=65 p99.99=2943 max=464467 mean=33.2 (ns)
+  Arena (bump)      n=5000000 min=3 p50=11 p90=14 p99=21 p99.9=109 p99.99=407 max=831396 mean=13.1 (ns)
+  pmr pool          n=5000000 min=31 p50=41 p90=55 p99=67 p99.9=129 p99.99=4287 max=1854863 mean=46.2 (ns)
+
+cross-thread (producer allocates, consumer frees):
+  new/delete        alloc n=5000000 min=28 p50=106 p90=1087 p99=1663 p99.9=3615 p99.99=20735 max=686951 mean=247.8 (ns)
+  LockFreePool      alloc n=5000000 min=30 p50=299 p90=503 p99=807 p99.9=3647 p99.99=20991 max=2608435 mean=336.7 (ns)
+  private list +ring  alloc n=5000000 min=20 p50=27 p90=116 p99=201 p99.9=251 p99.99=7423 max=2054152 mean=58.5 (ns)

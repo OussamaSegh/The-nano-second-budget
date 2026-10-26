@@ -1,0 +1,24 @@
+/* Colour accents for the reading PDF (build_print.py --color). The print
+   interior stays black and white; this file only overrides colours. */
+:root { --navy: #1b3a5c; --amber: #e8a33d; --amber-d: #a0600a; --sky: #eaf2fb; --tint: #f3f6fa; }
+h1, h2, h3, h4 { color: var(--navy); }
+h2.chapter, h1.frontchapter, .fm-head { border-bottom: 2pt solid var(--amber); }
+h2 .chapnum, .fm-kicker, h1.part .partnum { color: var(--amber-d); }
+h1.part .partnum::after { border-top-color: var(--amber); }
+blockquote { border-left-color: var(--amber); background: #fdf5e6; }
+pre { background: var(--tint); border-left: 2.5pt solid var(--navy); }
+code span.kw, code span.cf, code span.im { color: #1b3a5c; }
+code span.dt { color: #1d6f64; }
+code span.pp { color: #6f52a3; }
+code span.co { color: #5b6b5d; }
+code span.st, code span.ch { color: #9a3b12; }
+code span.dv, code span.fl, code span.bn { color: #8a5400; }
+code span.fu { color: #1f4f8a; }
+thead th { border-top-color: var(--navy); border-bottom-color: var(--navy); color: var(--navy); }
+tbody tr:last-child td { border-bottom-color: var(--navy); }
+tbody tr.even td { background: var(--sky); }
+figcaption strong { color: var(--amber-d); }
+.titlepg .rule { border-top-color: var(--amber); }
+.titlepg .t { color: var(--navy); }
+.toc .l1 > .row, .index .letter { color: var(--navy); }
+a { color: inherit; }

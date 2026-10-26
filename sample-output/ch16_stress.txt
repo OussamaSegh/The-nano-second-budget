@@ -1,0 +1,6 @@
+# cpu: Intel(R) Xeon(R) Processor @ 2.10GHz
+# kernel: Linux 6.18.44-fc-v153
+# governor: n/a
+# threads: 4
+correct ring: 0 bad reads out of 20000000
+buggy ring:   0 bad reads out of 20000000  (0 on x86 is expected: see the comment)

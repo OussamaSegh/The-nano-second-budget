@@ -1,0 +1,5 @@
+naive (service time)        n=2000000 min=2000 p50=2015 p90=2015 p99=2015 p99.9=2015 p99.99=2015 max=20000000 mean=2999.9 (ns)
+corrected (from intended)   n=2000000 min=2000 p50=2015 p90=2015 p99=10354687 p99.9=19136511 p99.99=19922943 max=20000000 mean=208714.0 (ns)
+naive + expected-interval   n=2039900 min=2000 p50=2015 p90=2015 p99=9961471 p99.9=19136511 p99.99=19922943 max=20000000 mean=198539.0 (ns)
+
+The naive p99.9 is 9497x too optimistic.

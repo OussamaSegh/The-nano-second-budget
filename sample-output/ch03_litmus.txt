@@ -1,0 +1,7 @@
+store buffering, 2000000 trials (count of r1 == r2 == 0)
+  relaxed          : 152094
+  release/acquire  : 158013
+  seq_cst          : 0   (must be 0)
+message passing, 2000000 trials (count of flag seen but data stale)
+  relaxed          : 0   (0 on x86, nonzero possible on ARM)
+  release/acquire  : 0   (must be 0)

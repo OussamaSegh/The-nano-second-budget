@@ -1,0 +1,271 @@
+# Index terms for the curated index.
+#   Display | pattern [| pattern ...]
+# Patterns are case-insensitive regular expressions matched against the text
+# of each section (an h3 section, or a chapter's opening before its first h3).
+# A section is indexed for a term when the term is in the section heading or
+# occurs at least three times in the section (a main discussion, not a
+# passing mention). Spaces and hyphens in a pattern match either form.
+# Lines indented by two spaces are sub-entries of the entry above.
+# Display text in backticks is set as code. Without a pattern the display
+# text itself is searched.
+ABA problem | \bABA\b
+acquire semantics | memory_order_acquire | \bacquire\b
+  acquire/release pairing | release/acquire | acquire/release | release.acquire
+admission control | admission | try_increment_below
+alarm fatigue
+alarm logic | ThresholdAlarm | \balarms?\b
+  hysteresis
+  persistence | persistence
+alignment | alignas | alignof | aligned
+allocation on the hot path | \bmalloc\b | operator new | allocat
+Amdahl's law | Amdahl
+annihilation (PET) | annihilation
+AoS (array of structs) | \bAoS\b | array of structs
+arena allocator | \barenas?\b
+`Arena` | \bArena\b
+ARMv8 | ARMv8 | AArch64 | \bARM\b | ldapr | ldar | stlr
+AddressSanitizer | AddressSanitizer | \bASan\b
+asymmetric fences | asymmetric fence | membarrier
+`std::atomic` | std::atomic\b | std::atomic<
+  is_always_lock_free | is_always_lock_free | is_lock_free
+`std::atomic_flag` | atomic_flag
+`std::atomic_ref` | atomic_ref
+`std::atomic<std::shared_ptr>` | atomic<std::shared_ptr
+`std::atomic_thread_fence` | atomic_thread_fence
+`std::atomic_signal_fence` | atomic_signal_fence
+atomic wait and notify | atomic::wait | \.wait\( | notify_one | notify_all
+audio engines | \baudio\b
+backoff | \bbackoff\b
+`Backoff` | \bBackoff\b
+`BackoffLock` | BackoffLock
+backpressure
+batching | \bbatch(es|ing)?\b
+benchmark harness | benchmark harness | measure_each | bench::
+benchmarking pitfalls | do_not_optimize | clobber_memory | warm.?up
+blocking (progress) | \bblocking\b
+branch prediction | branch predict | mispredict | branchless
+broadcast ring | broadcast ring | broadcast
+busy-spinning | busy.spin | busy.wait | spin.wait
+C-states and P-states | C-state | P-state | frequency scaling | turbo
+cache coherence | coherence | MESI
+cache lines | cache lines? | \b64.byte
+cache hierarchy | \bL1\b | \bL2\b | \bL3\b | last.level cache
+cache misses | cache miss
+calibration (PET) | calibration
+`CalibrationHolder` | CalibrationHolder
+`CalibrationTable` | CalibrationTable
+CAS (compare-and-swap) | \bCAS\b | compare.and.swap
+CAS loops | CAS loop | compare_exchange loop | retry loop
+`compare_exchange_strong` | compare_exchange_strong
+`compare_exchange_weak` | compare_exchange_weak
+  spurious failure | spurious
+`clock_gettime` | clock_gettime | CLOCK_MONOTONIC
+clocks | steady_clock | high_resolution_clock | \bclocks?\b
+`Coincidence` | \bCoincidence\b
+coincidence sorting | coincidence sort | \bsorter\b | coincidences?
+  coincidence window | coincidence window
+  delayed window | delayed window
+  multiples | \bmultiples?\b
+  oracle sorter | \boracle\b
+  random coincidences | random coincidence | \brandoms\b
+  scattered coincidences | scatter
+  streaming sorter | streaming
+  true coincidences | true coincidence | \btrues\b
+`StreamingSorter` | StreamingSorter
+concurrent hash maps | hash maps? | hash tables?
+  lock striping | lock striping | stripes?
+  open addressing | open addressing | linear probing | probe
+  Swiss tables | Swiss table
+`ConcurrentIntMap` | ConcurrentIntMap
+`std::condition_variable` | condition_variable | condition variables?
+  lost wake-ups | lost wake | spurious wake
+contention | \bcontention\b | \bcontended\b
+context switches | context switch
+coordinated omission
+copy-on-write | copy.on.write | RCU
+CPU frequency | frequency | governor
+CPU isolation | isolcpus | isolated cores? | nohz_full | housekeeping
+CPU pinning | pin_this_thread | pthread_setaffinity | sched_setaffinity | taskset | \bpinn(ed|ing)\b
+critical sections | critical sections?
+cyclictest | cyclictest
+data races | data races?
+data-oriented design | data.oriented
+data planes | \bdata plane | control plane | four planes
+dead time | dead time
+deadlines | deadlines?
+deadlock | deadlock
+decoding wire formats | decod | wire format | WireBatch
+defensive parsing | parsing | parse_le | le_parse | bounds check
+determinism | determinis
+detector (PET) | detectors? | scintillat | crystals?
+dirty cache lines | \bdirty\b
+Disruptor pattern | Disruptor
+  consumer dependencies | dependenc | gating
+  sequences | \bsequences?\b | cursor
+`Disruptor` | \bDisruptor<
+DMA | \bDMA\b
+DRAM latency | \bDRAM\b
+drain (shutdown) | \bdrain\b | shutdown
+`EnergyWindow` | EnergyWindow
+energy window (PET) | energy window | photopeak | 511 keV
+epoch-based reclamation | epoch.based | \bEBR\b | epochs?
+  limbo lists | limbo
+  orphan list | orphans?
+  stalled reader | stalled reader | stalls?
+`EpochDomain` | EpochDomain
+errata and versions | \bversion(ed|s|ing)?\b
+exceptions | exceptions? | noexcept | exception safety
+`std::expected` | std::expected
+exercises, how to run | ctest | exercise
+false sharing | false sharing
+fan-out | fan.out
+fault handling | \bfaults?\b
+fences | \bfences?\b | atomic_thread_fence
+fetch-and-add | fetch_add
+`fetch_max` | fetch_max
+fixed-capacity containers | fixed.capacity | bounded
+`std::from_chars` | from_chars
+futex | futex
+games and frame budgets | game engines? | \bframes?\b
+glossary terms | glossary
+happens-before | happens.before
+hardware boundary | hardware team | FPGA | ASIC | firmware
+`hardware_destructive_interference_size` | hardware_destructive_interference_size | interference_size
+hash functions | MurmurHash | \bhash(ing)?\b
+hazard pointers | hazard pointers? | hazard slots?
+  protect and validate | protect\( | validat
+  retire lists | retire lists? | \bretire
+  scan | \bscan(s|ning)?\b
+`HazardDomain` | HazardDomain
+`std::hazard_pointer` | std::hazard_pointer | hazard_pointer
+`Histogram` | \bHistogram\b
+histograms (latency) | histograms?
+histograms (PET) | sinograms? | separation histogram
+huge pages | huge pages? | hugepages? | \bTHP\b
+hyper-threading | hyper.thread | \bSMT\b | sibling
+IEC 62304 | IEC 62304
+interrupts | interrupts? | \bIRQs?\b | irqbalance
+jitter | jitter
+latency budgets | latency budgets? | budget
+latency distributions | distribution | percentiles?
+`LadderBook` | LadderBook
+`LazySkipList` | LazySkipList
+linearizability | lineariz
+Linux tuning | sysctl | tuned | kernel command line | boot parameter
+list mode | list.mode
+Little's law | Little's law
+`LockFreePool` | LockFreePool
+lock-free programming | lock.free
+`std::lock_guard` | lock_guard | scoped_lock | unique_lock
+locks | \blocks?\b | spinlocks?
+  fairness | fairness | \bfair\b
+  MCS lock | \bMCS\b
+  reader-writer locks | reader.writer | shared_mutex | rwlock | RwSpinlock
+  spinlocks | spinlocks?
+  test-and-set lock | test.and.set | \bTAS\b
+  test-and-test-and-set lock | \bTTAS\b
+  ticket lock | ticket lock
+`McsLock` | McsLock
+loss accounting | \bloss\b | \blost\b | dropped | books balance
+`MapBook` | MapBook
+measurement method | measur
+medical devices | medical | patient | regulated
+memory hierarchy | memory hierarchy | pointer chase
+memory model (C++) | memory model
+memory orders | memory orders? | memory_order
+`memory_order_acq_rel` | memory_order_acq_rel | \bacq_rel\b
+`memory_order_acquire` | memory_order_acquire
+`memory_order_relaxed` | memory_order_relaxed | \brelaxed\b
+`memory_order_release` | memory_order_release
+`memory_order_seq_cst` | memory_order_seq_cst | \bseq_cst\b
+memory reclamation | reclamation | \bSMR\b
+merging streams | merg(e|er|ing) | watermarks?
+Michael-Scott queue | Michael.Scott | MsQueue
+`MsQueue` | MsQueue
+`mlockall` | mlockall | mlock\b | page fault
+model checking | model check | GenMC | CDSChecker | CBMC
+moves | std::move | move constructor | moved.from
+MPMC queues | \bMPMC\b
+`MpmcBoundedQueue` | MpmcBoundedQueue
+MPSC queues | \bMPSC\b
+`std::mutex` | std::mutex | \bmutex(es)?\b
+NUMA | \bNUMA\b
+object pools | object pools? | \bpools?\b
+`std::optional` | std::optional
+order books | order books? | price levels?
+ownership | ownership | \bowners?\b | borrow
+padding | padding | \bPadded\b
+`Padded` | Padded<
+page faults | page faults? | mlock
+percentiles | \bp50\b | \bp99 | percentiles?
+perf (tool) | \bperf\b
+PET (positron emission tomography) | \bPET\b
+  acquisition pipeline | acquisition | pipeline
+  time of flight | time.of.flight | \bTOF\b
+power-of-two capacity | power of two | power-of-two | next_pow2 | mask
+PREEMPT_RT | PREEMPT_RT | real.time kernel
+prefetching | prefetch
+priority inversion | priority inversion
+progress guarantees | progress guarantees? | obstruction.free
+RAII | \bRAII\b
+RCU (read-copy-update) | \bRCU\b | read.copy.update
+`RcuMap` | RcuMap
+`rdtsc` | rdtsc | \bTSC\b
+release semantics | memory_order_release | \brelease\b
+reorder buffer | reorder buffer | reordering
+requirements and traceability | requirements? | traceab
+retire (reclamation) | \bretire\b
+ring buffers | ring buffers? | \brings?\b
+risk management | ISO 14971 | \brisk\b
+RMW operations | \bRMW\b | read.modify.write
+robotics | robot
+safety-critical software | safety
+sanitizers | sanitizers? | LLDS_SANITIZE
+scheduler | scheduler | SCHED_FIFO | SCHED_OTHER | scheduling
+sequence numbers | sequence numbers? | sequence check | SequenceTracker
+seqlocks | seqlocks? | sequence locks?
+  torn reads | torn
+  try_load | try_load
+`SeqLock` | \bSeqLock\b
+`std::shared_ptr` | shared_ptr
+SIMD | \bSIMD\b | \bAVX | vectori
+single-writer principle | single.writer
+skip lists | skip lists?
+SoA (struct of arrays) | \bSoA\b | struct of arrays
+`std::span` | std::span
+SPSC queues | \bSPSC\b
+  cached indices | cached | cache the other
+`SpscRing` | SpscRing
+steal time | steal time
+store buffers | store buffers? | store.buffering
+stress testing | stress tests? | stress
+syscalls | system calls? | syscalls?
+`TaggedPtr` | TaggedPtr
+tagged pointers | tagged pointers? | version tag
+`TaggedStack` | TaggedStack
+tail latency | tail latency | the tail
+testing concurrent code | testing | tests?
+`TasLock` | TasLock
+ThreadSanitizer | ThreadSanitizer | \bTSan\b
+threads | std::thread | jthread | threads?
+`TicketLock` | TicketLock
+timer interrupts | timer interrupts? | CONFIG_HZ | \btick\b
+timestamps (PET) | timestamps? | \bticks?\b
+TLB | \bTLB\b
+`TopOfBook` | TopOfBook
+trading systems | trading | market.making | exchange
+Treiber stack | Treiber
+`TscClock` | TscClock
+TSO (total store order) | \bTSO\b | total store order
+`TtasLock` | TtasLock
+UndefinedBehaviorSanitizer | UndefinedBehaviorSanitizer | \bUBSan\b
+undefined behaviour | undefined behaviou?r | \bUB\b
+unsigned arithmetic | unsigned | wrap(s|ping|around)?
+virtual machines | virtual machines? | \bVMs?\b | hypervisor
+Vyukov's bounded queue | Vyukov
+wait-free | wait.free
+wait strategies | wait strateg
+`WatermarkMerger` | WatermarkMerger
+watermarks | watermarks? | promise
+work stealing | work.stealing
+x86-64 | \bx86 | xchg | lock prefix

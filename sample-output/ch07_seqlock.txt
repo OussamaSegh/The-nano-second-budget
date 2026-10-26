@@ -1,0 +1,12 @@
+# cpu: Intel(R) Xeon(R) Processor @ 2.10GHz
+# kernel: Linux 6.18.44-fc-v153
+# governor: n/a
+# threads: 4
+std::mutex     R=1  reads    46.60 M/s  torn=0  write p50= 591 p99=  1759 max= 2843371 ns
+shared_mutex   R=1  reads     1.12 M/s  torn=0  write p50=21503 p99= 45055 max= 3617967 ns
+SeqLock        R=1  reads   105.93 M/s  torn=0  write p50=  92 p99=   137 max=  827359 ns
+
+std::mutex     R=3  reads    21.02 M/s  torn=0  write p50= 687 p99= 20223 max= 1746058 ns
+shared_mutex   R=3  reads    11.59 M/s  torn=0  write p50=38911 p99= 87039 max=11093754 ns
+SeqLock        R=3  reads   212.90 M/s  torn=0  write p50=  64 p99=   195 max=  755324 ns
+

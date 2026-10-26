@@ -1,0 +1,126 @@
+/* Print interior, 7.5 x 9.25 in, black-and-white. Running heads and folios
+   are stamped afterwards by build_print.py, so @page has no margin boxes. */
+@font-face { font-family: "Source Serif 4"; font-weight: 400; font-style: normal; src: url(fonts/SourceSerif4-Regular.ttf); }
+@font-face { font-family: "Source Serif 4"; font-weight: 400; font-style: italic; src: url(fonts/SourceSerif4-It.ttf); }
+@font-face { font-family: "Source Serif 4"; font-weight: 600; font-style: normal; src: url(fonts/SourceSerif4-Semibold.ttf); }
+@font-face { font-family: "Source Serif 4"; font-weight: 600; font-style: italic; src: url(fonts/SourceSerif4-SemiboldIt.ttf); }
+@font-face { font-family: "Source Serif 4"; font-weight: 700; font-style: normal; src: url(fonts/SourceSerif4-Bold.ttf); }
+@font-face { font-family: "Source Serif 4"; font-weight: 700; font-style: italic; src: url(fonts/SourceSerif4-BoldIt.ttf); }
+
+@font-face { font-family: "InterT"; font-weight: 400; font-style: normal; src: url(fonts/inter-latin-400-normal.woff2); }
+@font-face { font-family: "InterT"; font-weight: 500; font-style: normal; src: url(fonts/inter-latin-500-normal.woff2); }
+@font-face { font-family: "InterT"; font-weight: 600; font-style: normal; src: url(fonts/inter-latin-600-normal.woff2); }
+@font-face { font-family: "InterT"; font-weight: 700; font-style: normal; src: url(fonts/inter-latin-700-normal.woff2); }
+@font-face { font-family: "InterT"; font-weight: 800; font-style: normal; src: url(fonts/inter-latin-800-normal.woff2); }
+@font-face { font-family: "InterT"; font-weight: 900; font-style: normal; src: url(fonts/inter-latin-900-normal.woff2); }
+@page { size: 7.5in 9.25in; margin: 0.9in 0.625in 0.8in 0.875in; }
+@page :left  { margin-left: 0.625in; margin-right: 0.875in; }
+@page :right { margin-left: 0.875in; margin-right: 0.625in; }
+
+:root { --serif: "Source Serif 4", "DejaVu Serif", serif; --sans: "InterT", "Inter", "DejaVu Sans", sans-serif;
+        --mono: "JetBrains Mono", "DejaVu Sans Mono", monospace; --rule: #9a9a9a; --tint: #f1f1f1; }
+html { font-size: 10pt; }
+body { font-family: var(--serif); line-height: 1.42; color: #000; margin: 0; padding: 0;
+       hyphens: auto; text-align: justify; font-kerning: normal; font-variant-ligatures: common-ligatures; }
+a { color: inherit; text-decoration: none; }
+
+/* --- headings --- */
+h1, h2, h3, h4 { font-family: var(--sans); text-align: left; hyphens: none; break-after: avoid; line-height: 1.2; color: #000; }
+h2.chapter, h1.frontchapter, .fm-head { break-before: page; font-size: 2.1em; font-weight: 800; letter-spacing: -0.01em;
+       margin: 0.55in 0 0.45in 0; padding-bottom: 0.18in; border-bottom: 0.75pt solid #000; }
+h2 .chapnum, .fm-kicker { display: block; font-size: 0.42em; font-weight: 600; text-transform: uppercase;
+       letter-spacing: 0.2em; color: #444; margin-bottom: 0.6em; }
+h2:not(.chapter) { font-size: 1.6em; font-weight: 800; break-before: page; margin: 0.5in 0 0.35in; }
+h3 { font-size: 1.22em; font-weight: 700; margin: 1.6em 0 0.5em; }
+h4 { font-size: 1.02em; font-weight: 700; margin: 1.3em 0 0.4em; }
+h3 + p, h4 + p, h2 + p { text-indent: 0; }
+
+/* --- part pages: full page, centred label and title, then intro --- */
+h1.part { break-before: page; text-align: center; padding-top: 2.2in; margin: 0 0 0.45in; font-weight: 800; font-size: 2.4em; }
+h1.part .partnum { display: block; font-size: 0.4em; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: #444; margin-bottom: 0.7em; }
+h1.part .partnum::after { content: ""; display: block; width: 0.6in; margin: 0.9em auto 0; border-top: 1.5pt solid #000; }
+h1.part ~ p.partintro { font-style: italic; text-align: left; margin: 0 0.35in 0.7em; }
+.partend { break-after: page; }
+
+/* --- text --- */
+p { margin: 0 0 0.62em; orphans: 3; widows: 3; }
+strong { font-weight: 700; }
+code { font-family: var(--mono); font-size: 0.84em; hyphens: none; }
+ul, ol { margin: 0 0 0.7em; padding-left: 1.4em; }
+li { margin-bottom: 0.22em; }
+li > p { margin-bottom: 0.3em; }
+blockquote { margin: 0.8em 0 0.9em; padding: 0.4em 0.9em; border-left: 2.5pt solid #000; background: var(--tint); }
+blockquote p:last-child { margin-bottom: 0; }
+
+/* --- code --- */
+div.sourceCode, pre { break-inside: avoid; }
+pre { background: var(--tint); border-left: 2pt solid #555; padding: 0.5em 0.7em; margin: 0.6em 0 0.9em;
+      font-family: var(--mono); font-size: 7.6pt; line-height: 1.32; white-space: pre-wrap; word-break: break-word; text-align: left; hyphens: none; }
+pre code { font-size: 1em; }
+div.sourceCode { margin: 0.6em 0 0.9em; }
+div.sourceCode pre { margin: 0; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline; text-indent: 0 !important; padding-left: 0 !important; }
+code span.kw, code span.cf, code span.dt, code span.pp, code span.im { font-weight: 700; color: #000; }
+code span.co { font-style: italic; color: #555; }
+code span.st, code span.ch, code span.dv, code span.fl, code span.bn { color: #333; }
+code span { color: #000; }
+
+/* --- tables --- */
+table { border-collapse: collapse; margin: 0.8em 0 1em; font-size: 0.84em; width: 100%; break-inside: avoid; text-align: left; hyphens: none; line-height: 1.3; }
+thead th { border-top: 1pt solid #000; border-bottom: 0.6pt solid #000; font-family: var(--sans); font-weight: 600; font-size: 0.95em; }
+th, td { padding: 0.28em 0.45em; vertical-align: top; }
+tbody tr:last-child td { border-bottom: 1pt solid #000; }
+tbody tr.even td { background: #f6f6f6; }
+
+/* --- front matter --- */
+.page { break-after: page; }
+.halftitle { padding-top: 2.4in; text-align: center; font-family: var(--sans); font-weight: 800; font-size: 2.2em; letter-spacing: -0.01em; }
+.titlepg { text-align: left; padding-top: 0.9in; font-family: var(--sans); height: 6.2in; position: relative; }
+.titlepg .t { font-weight: 900; font-size: 3.5em; line-height: 0.98; letter-spacing: -0.025em; }
+.titlepg .s { font-size: 1.32em; font-weight: 500; margin-top: 0.75em; line-height: 1.3; color: #222; max-width: 5.4in; }
+.titlepg .tag { font-family: var(--serif); font-style: italic; font-size: 1.1em; margin-top: 1.1em; color: #333; }
+.titlepg .rule { width: 0.8in; border-top: 2.5pt solid #000; margin-top: 0.5in; }
+.titlepg .a { font-weight: 700; font-size: 1.45em; margin-top: 0.35in; }
+.titlepg .pub { position: absolute; bottom: 0; left: 0; font-size: 0.85em; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: #333; }
+.copyright { font-size: 0.8em; line-height: 1.4; text-align: left; hyphens: none; padding-top: 0.2in; }
+.copyright p { margin-bottom: 0.75em; }
+.copyright .bt { font-family: var(--sans); font-weight: 700; font-size: 1.05em; }
+.copyright dl { display: grid; grid-template-columns: auto 1fr; gap: 0.15em 1em; margin: 0 0 0.9em; }
+.copyright dt { font-weight: 600; } .copyright dd { margin: 0; }
+.blank { break-before: page; break-after: page; height: 1px; }
+
+/* --- tables of contents --- */
+.toc { font-family: var(--serif); }
+.toc ol { list-style: none; padding: 0; margin: 0; }
+.toc li { margin: 0; }
+.toc .row { display: flex; align-items: baseline; gap: 0.35em; break-inside: avoid; }
+.toc .row .lbl { flex: none; }
+.toc .row .dots { flex: 1; border-bottom: 0.6pt dotted #777; transform: translateY(-0.25em); min-width: 0.5em; }
+.toc .row .pg { flex: none; min-width: 1.6em; text-align: right; font-variant-numeric: tabular-nums; }
+.toc .l1 > .row { font-family: var(--sans); font-weight: 700; margin-top: 0.85em; font-size: 0.98em; }
+.toc .l1 > .row .dots { border: 0; }
+.toc .l2 > .row { margin-top: 0.3em; font-weight: 600; }
+.toc .l2 > .row .num { display: inline-block; min-width: 2.3em; font-family: var(--sans); font-weight: 600; font-size: 0.9em; }
+.toc .l3 > .row { padding-left: 2.3em; font-size: 0.9em; margin-top: 0.08em; color: #222; }
+.toc.brief .l2 > .row { font-weight: 400; }
+.toc.brief .l1 > .row { margin-top: 1em; }
+
+/* --- index --- */
+.index { column-count: 2; column-gap: 0.3in; font-size: 0.84em; line-height: 1.32; text-align: left; hyphens: none; }
+.index .letter { font-family: var(--sans); font-weight: 800; font-size: 1.15em; margin: 0.9em 0 0.3em; break-after: avoid; }
+.index .letter:first-child { margin-top: 0; }
+.index .e { padding-left: 1.2em; text-indent: -1.2em; margin: 0 0 0.12em; }
+.index .sub { padding-left: 2.2em; text-indent: -1.2em; margin: 0 0 0.12em; }
+.index-intro { font-size: 0.85em; font-style: italic; margin-bottom: 1.2em; }
+
+.about p { text-align: left; }
+.colophon { margin-top: 0.6in; font-size: 0.85em; font-style: italic; text-align: left; }
+
+/* --- figures --- */
+figure { margin: 1.1em 0 1.2em; break-inside: avoid; text-align: center; }
+figure svg { width: 100%; height: auto; max-height: 3.6in; display: block; margin: 0 auto; }
+figcaption { font-size: 0.84em; line-height: 1.35; text-align: left; margin-top: 0.55em; hyphens: none; color: #222; }
+figcaption strong { font-family: var(--sans); font-weight: 700; margin-right: 0.3em; }
+.index .e code, .index .sub code { font-size: 0.92em; }
+.index a { color: inherit; }

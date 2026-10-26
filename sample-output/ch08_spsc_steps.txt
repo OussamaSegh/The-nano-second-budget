@@ -1,0 +1,6 @@
+producer cpu 0, consumer cpu 1
+v1 mutex + deque              2.5 M/s (range    2.4-   2.6)  RTT p50= 2367 p99= 16255 p99.9=  38911 ns
+v2 atomic, modulo, seq_cst    7.5 M/s (range    6.5-   8.3)  RTT p50=  519 p99=   743 p99.9=   7935 ns
+v3 mask, acquire/release     53.1 M/s (range   45.7-  69.8)  RTT p50=  467 p99=   623 p99.9=   5503 ns
+v4 + padding                 86.0 M/s (range   65.5-  99.8)  RTT p50=  491 p99=   671 p99.9=   6079 ns
+v5 + cached indices         138.8 M/s (range  112.2- 160.5)  RTT p50=  475 p99=   623 p99.9=  11519 ns

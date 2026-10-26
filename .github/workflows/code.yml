@@ -1,0 +1,47 @@
+name: Code
+
+# Build the llds library, its examples and the exercise solutions, and run the
+# tests with GCC, Clang, ThreadSanitizer and AddressSanitizer. The exercise
+# starters are meant to fail until a reader solves them, so they are excluded
+# here and checked separately to make sure they still fail.
+
+on:
+  push:
+    branches: [main]
+    paths-ignore: ["book/**", "*.md"]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    name: ${{ matrix.name }}
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { name: "GCC 13 Release", cc: gcc-13, cxx: g++-13, type: Release, sanitize: "" }
+          - { name: "Clang 18 Release", cc: clang-18, cxx: clang++-18, type: Release, sanitize: "" }
+          - { name: "GCC ThreadSanitizer", cc: gcc-13, cxx: g++-13, type: RelWithDebInfo, sanitize: thread }
+          - { name: "GCC Address + UB sanitizers", cc: gcc-13, cxx: g++-13, type: RelWithDebInfo, sanitize: "address,undefined" }
+    env:
+      CC: ${{ matrix.cc }}
+      CXX: ${{ matrix.cxx }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install tools
+        run: sudo apt-get update && sudo apt-get install -y ninja-build
+      - name: Configure
+        run: cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=${{ matrix.type }} ${{ matrix.sanitize && format('-DLLDS_SANITIZE={0}', matrix.sanitize) || '' }}
+      - name: Build
+        run: cmake --build build
+      - name: Library, solutions and example smoke tests
+        run: ctest --test-dir build -LE exercise --output-on-failure -j2
+      - name: Exercise starters still fail (they are for the reader to complete)
+        if: matrix.sanitize == ''
+        run: |
+          set +e
+          ctest --test-dir build -L exercise -j2 > exercises.log 2>&1
+          passed=$(grep -c "Passed" exercises.log)
+          echo "exercise tests passing: $passed"
+          test "$passed" -eq 0

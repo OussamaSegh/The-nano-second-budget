@@ -1,0 +1,14 @@
+# cpu: Intel(R) Xeon(R) Processor @ 2.10GHz
+# kernel: Linux 6.18.44-fc-v153
+# governor: n/a
+# threads: 4
+mutex                R=1      8.70 M reads/s per reader  ( 114.9 ns per read)
+atomic<shared_ptr>   R=1      7.51 M reads/s per reader  ( 133.2 ns per read)
+hazard pointers      R=1     27.02 M reads/s per reader  (  37.0 ns per read)
+epoch                R=1     30.32 M reads/s per reader  (  33.0 ns per read)
+
+mutex                R=3      2.37 M reads/s per reader  ( 421.6 ns per read)
+atomic<shared_ptr>   R=3      1.04 M reads/s per reader  ( 959.0 ns per read)
+hazard pointers      R=3     23.74 M reads/s per reader  (  42.1 ns per read)
+epoch                R=3     26.11 M reads/s per reader  (  38.3 ns per read)
+

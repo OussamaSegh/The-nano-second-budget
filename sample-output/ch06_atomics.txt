@@ -1,0 +1,25 @@
+# cpu: Intel(R) Xeon(R) Processor @ 2.10GHz
+# kernel: Linux 6.18.44-fc-v153
+# governor: n/a
+# threads: 4
+single thread, per operation:
+  plain increment          0.18 ns
+  load(relaxed)            0.38 ns
+  load(seq_cst)            0.73 ns
+  store(release)           0.36 ns
+  store(seq_cst)           6.66 ns
+  fetch_add(relaxed)       6.97 ns
+  compare_exchange        11.81 ns
+
+contended counter, ns per increment (wall time / total ops):
+  T=1 fetch_add    9.63 ns
+  T=1 CAS loop    11.74 ns
+  T=2 fetch_add   22.73 ns
+  T=2 CAS loop    40.39 ns
+  T=4 fetch_add   28.81 ns
+  T=4 CAS loop    51.30 ns
+
+ABA demonstration with a naive stack (A -> B -> C):
+  naive CAS succeeded: yes; head is now node 2
+  but node 2 was popped by thread B: the stack is corrupted.
+  tagged CAS succeeded: no (tag was 3, expected 0)

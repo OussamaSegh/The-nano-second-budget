@@ -1,0 +1,16 @@
+# cpu: Intel(R) Xeon(R) Processor @ 2.10GHz
+# kernel: Linux 6.18.44-fc-v153
+# governor: n/a
+# threads: 4
+ran 20 s: 1191 display frames, 26 alarm transitions, 14 annunciations
+sample-to-alarm latency: n=26 min=728 p50=1487 p90=1935 p99=1026742 p99.9=1026742 p99.99=1026742 max=1026742 mean=41676.0 (ns)
+  (excludes the deliberate persistence delay; measures pipeline cost only)
+budget (10 ms) misses: 0   audit log entries: 26, in order: yes   display regressions: 0
+  t=  1.102 s  TACHY  RAISED
+  t=  1.708 s  DESAT  RAISED
+  t=  2.000 s  TACHY  cleared
+  t=  3.000 s  DESAT  cleared
+  t=  4.104 s  TACHY  RAISED
+  t=  4.708 s  DESAT  RAISED
+  t=  5.000 s  TACHY  cleared
+  t=  6.000 s  DESAT  cleared

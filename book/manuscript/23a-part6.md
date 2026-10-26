@@ -1,0 +1,7 @@
+# Part VI. Applying It: PET Data Acquisition {.part}
+
+The case studies of Chapter 18 sketched how the book's structures combine in four kinds of system. This part follows one kind all the way down: the data-acquisition and processing software of a positron emission tomography (PET) scanner, the part between the detector electronics and image reconstruction. It is a good test of everything that came before. Data arrives from hardware that cannot wait, at millions of events a second, from several independent sources that must be merged in time order; a physics-defined pairing rule has to be implemented exactly; calibration changes while data flows; and because the product is a medical device, every claim about the software has to be backed by evidence.
+
+Chapter 19 builds the pipeline and its ownership rules. Chapter 20 specifies and implements coincidence sorting, the algorithm at its centre, and merges the sources with watermarks. Chapter 21 deals with overload, calibration and the parallel analysis behind reconstruction. Chapter 22 is about turning the code into a reviewable, traceable engineering artefact, and ends with a staged capstone project.
+
+All of it runs on a simulated detector, `examples/ch19_pet_daq.cpp`, built from the library's new `llds/pet/` headers. The simulation is physically plausible in its orders of magnitude and deliberately generic. It is not the design of any real scanner, and its numbers are not clinical or regulatory values.

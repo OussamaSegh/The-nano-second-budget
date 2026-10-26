@@ -1,0 +1,8 @@
+# cpu: Intel(R) Xeon(R) Processor @ 2.10GHz
+# kernel: Linux 6.18.44-fc-v153
+# governor: n/a
+# threads: 4
+A unpinned, sleep when idle    p50= 116735 p99=  260095 p99.9=  1490943 max=  2384155 ns
+B unpinned, yield when idle    p50=    807 p99=   18431 p99.9=  1032191 max=  2095131 ns
+C unpinned, busy-spin          p50=    543 p99=    5247 p99.9=   200703 max=  1032659 ns
+D pinned, busy-spin            p50=    543 p99=  102399 p99.9=   974847 max=  2585359 ns

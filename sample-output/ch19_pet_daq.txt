@@ -1,0 +1,39 @@
+$ ch19_pet_daq --corrupt
+# cpu: Intel(R) Xeon(R) Processor @ 2.10GHz
+# kernel: Linux 6.18.44-fc-v153
+# governor: n/a
+# threads: 4
+simulated 10000000 decays in 10.00 s: 14999655 hits (1.5 M hits/s through the pipeline)
+accounting: generated 14999655 = sent 14999655 + dropped at source 0 (0 batches)
+            sent 14999655 = decoded 14999542 + rejected by decoder 113 (injected 113)
+            sequence gaps seen downstream: 113 (dropped + rejected = 113)
+sorter: 14999542 hits in, 8771288 coincidences, out-of-order 0, forced evictions 0, peak retained 11
+queue delay (source push -> sorter pop): n=234371 min=237 p50=551 p90=1163263 p99=3932159 p99.9=6881279 p99.99=7929855 max=7988816 mean=315855.5 (ns)
+calibration v1: 4382720 coincidences, 1567872 in the 425-650 keV window (35.8%)
+calibration v2: 4388568 coincidences, 2201933 in the 425-650 keV window (50.2%)
+accepted coincidences by module separation: 0:0 1:367906 2:376051 3:714904 4:2310944   (4 = opposite modules: mostly trues)
+books balance: yes
+
+$ ch19_pet_daq --rate=0
+simulated 10000000 decays in 2.95 s: 14999655 hits (3.9 M hits/s through the pipeline)
+accounting: generated 14999655 = sent 11503271 + dropped at source 3496384 (54631 batches)
+            sent 11503271 = decoded 11503271 + rejected by decoder 0 (injected 0)
+            sequence gaps seen downstream: 3496384 (dropped + rejected = 3496384)
+sorter: 11503271 hits in, 5054724 coincidences, out-of-order 0, forced evictions 0, peak retained 10
+queue delay (source push -> sorter pop): n=179740 min=267 p50=575 p90=11534335 p99=48234495 p99.9=89128959 p99.99=100663295 max=100826919 mean=3652316.2 (ns)
+calibration v1: 2095104 coincidences, 751865 in the 425-650 keV window (35.9%)
+calibration v2: 2959620 coincidences, 1484745 in the 425-650 keV window (50.2%)
+accepted coincidences by module separation: 0:0 1:265038 2:251699 3:450418 4:1269455   (4 = opposite modules: mostly trues)
+books balance: yes
+
+$ ch19_pet_daq --slow-analysis
+simulated 10000000 decays in 10.06 s: 14999655 hits (1.1 M hits/s through the pipeline)
+accounting: generated 14999655 = sent 10816359 + dropped at source 4183296 (65364 batches)
+            sent 10816359 = decoded 10816359 + rejected by decoder 0 (injected 0)
+            sequence gaps seen downstream: 4183296 (dropped + rejected = 4183296)
+sorter: 10816359 hits in, 5391094 coincidences, out-of-order 0, forced evictions 0, peak retained 10
+queue delay (source push -> sorter pop): n=169007 min=249 p50=30146559 p90=32505855 p99=35651583 p99.9=37748735 p99.99=40370175 max=41024994 mean=30004910.7 (ns)
+calibration v1: 2553856 coincidences, 912247 in the 425-650 keV window (35.7%)
+calibration v2: 2837238 coincidences, 1422692 in the 425-650 keV window (50.1%)
+accepted coincidences by module separation: 0:0 1:251975 2:248477 3:455455 4:1379032   (4 = opposite modules: mostly trues)
+books balance: yes

@@ -1,0 +1,11 @@
+# cpu: Intel(R) Xeon(R) Processor @ 2.10GHz
+# kernel: Linux 6.18.44-fc-v153
+# governor: n/a
+# threads: 4
+clock_gettime(CLOCK_MONOTONIC)        30.73 ns
+std::chrono::steady_clock::now()      30.94 ns
+rdtsc                                 17.75 ns
+rdtscp                                23.24 ns
+TSC: 0.4762 ns per cycle (2.100 GHz)
+clock_gettime minimum observable step: 25 ns
+measure_each(empty-ish op): n=1000000 min=0 p50=6 p90=7 p99=10 p99.9=15 p99.99=151 max=53101 mean=6.9 (ns)

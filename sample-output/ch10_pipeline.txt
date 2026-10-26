@@ -1,0 +1,4 @@
+chained SPSC  flood     7.49 M ev/s  e2e p50=270335 p99=  385023 ns  (checksum 221b78f96be34)
+disruptor     flood     6.96 M ev/s  e2e p50=  5439 p99=  115711 ns  (checksum 221b78f96be34, +journal)
+chained SPSC  paced     1.00 M ev/s  e2e p50=   499 p99=  348159 ns  (checksum 5750fc11dce)
+disruptor     paced     1.00 M ev/s  e2e p50=   455 p99=  227327 ns  (checksum 5750fc11dce, +journal)

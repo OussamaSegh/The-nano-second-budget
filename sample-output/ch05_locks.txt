@@ -1,0 +1,25 @@
+# cpu: Intel(R) Xeon(R) Processor @ 2.10GHz
+# kernel: Linux 6.18.44-fc-v153
+# governor: n/a
+# threads: 4
+std::mutex   T=1     15.16 Mops/s  acquire p50=   30 p99=     38 p99.9=      48 max=   224766 ns  
+TAS          T=1     19.12 Mops/s  acquire p50=   31 p99=     36 p99.9=      42 max=    40301 ns  
+TTAS         T=1     19.52 Mops/s  acquire p50=   30 p99=     35 p99.9=      41 max=    39409 ns  
+TTAS+backoff T=1     17.53 Mops/s  acquire p50=   32 p99=     42 p99.9=      92 max=   121048 ns  
+ticket       T=1     17.89 Mops/s  acquire p50=   31 p99=     41 p99.9=     102 max=    84151 ns  
+MCS          T=1     15.17 Mops/s  acquire p50=   28 p99=     40 p99.9=      95 max=   266443 ns  
+
+std::mutex   T=2      4.60 Mops/s  acquire p50=   37 p99=   1151 p99.9=   12671 max=   631114 ns  
+TAS          T=2      7.83 Mops/s  acquire p50=  110 p99=    229 p99.9=   35839 max=  1513468 ns  
+TTAS         T=2      6.92 Mops/s  acquire p50=   30 p99=   6143 p99.9=   26879 max=   863160 ns  
+TTAS+backoff T=2     16.95 Mops/s  acquire p50=   32 p99=    663 p99.9=    7679 max=   282332 ns  
+ticket       T=2      1.97 Mops/s  acquire p50=  791 p99=   1391 p99.9=   13311 max=   814798 ns  
+MCS          T=2      3.50 Mops/s  acquire p50=  331 p99=    623 p99.9=    3935 max=   557044 ns  
+
+std::mutex   T=4      5.38 Mops/s  acquire p50=   32 p99=  13183 p99.9=   27647 max=  3375007 ns  
+TAS          T=4      3.96 Mops/s  acquire p50=  207 p99=   1247 p99.9=  172031 max=  2711844 ns  
+TTAS         T=4      5.10 Mops/s  acquire p50=  191 p99=   6527 p99.9=   61439 max=  3726974 ns  
+TTAS+backoff T=4     15.65 Mops/s  acquire p50=   32 p99=   1327 p99.9=   57343 max=   934470 ns  
+ticket       T=4      1.86 Mops/s  acquire p50= 1983 p99=   4735 p99.9=   29439 max=  4886942 ns  
+MCS          T=4      4.31 Mops/s  acquire p50=  727 p99=   2879 p99.9=   17919 max= 23820883 ns  
+

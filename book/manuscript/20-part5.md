@@ -1,0 +1,3 @@
+# Part V. Correctness, Tuning and Practice {.part}
+
+A fast data structure that is occasionally wrong is worse than a slow one, and a correct one that runs on a badly configured machine is slow anyway. This part covers what turns the structures of Parts II to IV into a working system: how to find concurrency bugs that tests on x86 never show (Chapter 16), how to configure the operating system and hardware so that measured latency matches designed latency (Chapter 17), and how to choose and combine the structures in real systems, with a patient-monitoring pipeline as the main case study (Chapter 18).
