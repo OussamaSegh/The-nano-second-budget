@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>$pagetitle$ · The Nanosecond Budget</title>
+  <link rel="stylesheet" href="../assets/site.css" />
+  <link rel="icon" href="../assets/cover-thumb.jpg" />
+</head>
+<body class="reader">
+<header class="bar">
+  <button class="menu" aria-controls="toc" aria-expanded="false" onclick="document.body.classList.toggle('toc-open');this.setAttribute('aria-expanded',document.body.classList.contains('toc-open'))">Contents</button>
+  <a class="brand" href="../index.html">The Nanosecond Budget</a>
+  <nav class="links"><a href="../index.html#download">Download</a><a href="https://github.com/OussamaSegh/The-nano-second-budget">Code</a></nav>
+</header>
+<div class="layout">
+<nav id="toc" class="toc" aria-label="Contents">
+$table-of-contents$
+</nav>
+<main class="page">
+$body$
+<nav class="pager" aria-label="Previous and next">
+$if(previous.url)$<a class="prev" href="$previous.url$" rel="prev"><span>Previous</span>$previous.title$</a>$endif$
+$if(next.url)$<a class="next" href="$next.url$" rel="next"><span>Next</span>$next.title$</a>$endif$
+</nav>
+</main>
+</div>
+<script>
+  // mark the current page in the contents and keep it in view
+  var here = location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('#toc a').forEach(function (a) {
+    if (a.getAttribute('href').split('#')[0] === here) { a.classList.add('current'); }
+  });
+  var cur = document.querySelector('#toc a.current');
+  if (cur) { cur.scrollIntoView({block: 'center'}); }
+</script>
+</body>
+</html>

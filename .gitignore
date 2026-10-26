@@ -1,7 +1,7 @@
 build*/
 !book/build-book/
-out/
-site/
+/out/
+/site/
 book/build-book/figures/
 book/build-book/figures-gray/
 book/build-book/node_modules/
